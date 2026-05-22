@@ -48,17 +48,27 @@ export default function ContactPage() {
             onSubmit={(e) => {
               e.preventDefault();
               const f = new FormData(e.currentTarget);
-              const body = `Name: ${f.get("name")}%0AGroup: ${f.get("group")}%0ADates: ${f.get("dates")}%0ARoute: ${f.get("route")}%0AMessage: ${f.get("message")}`;
-              window.location.href = `https://wa.me/918921062797?text=${body}`;
+              const text = [
+                `Name: ${f.get("name")}`,
+                `Phone / WhatsApp: ${f.get("phone")}`,
+                `Pickup Location: ${f.get("pickup")}`,
+                `Date: ${f.get("date")}`,
+                `Package / Route: ${f.get("route")}`,
+                `Group Size: ${f.get("group")}`,
+                `Message: ${f.get("message")}`,
+              ].join("\n");
+              window.location.href = `https://wa.me/918921062797?text=${encodeURIComponent(text)}`;
             }}
           >
             <div className="text-xs uppercase tracking-[0.25em] text-accent">Plan your trip</div>
             <h2 className="mt-4 font-display text-3xl text-foreground">A few quick details</h2>
             <div className="mt-8 grid gap-6 sm:grid-cols-2">
               <Field name="name" label="Your name" />
-              <Field name="group" label="Group size" />
-              <Field name="dates" label="Travel dates" />
-              <Field name="route" label="Preferred route" />
+              <Field name="phone" label="Phone / WhatsApp" type="tel" />
+              <Field name="pickup" label="Pickup location" />
+              <Field name="date" label="Travel date" type="date" />
+              <Field name="route" label="Package / Travel route" />
+              <Field name="group" label="Group size" type="number" />
             </div>
             <div className="mt-6">
               <label className="block text-xs uppercase tracking-[0.2em] text-muted-foreground">Tell us more</label>
@@ -117,13 +127,13 @@ function ContactRow({
   );
 }
 
-function Field({ name, label }: { name: string; label: string }) {
+function Field({ name, label, type = "text" }: { name: string; label: string; type?: string }) {
   return (
     <div>
       <label className="block text-xs uppercase tracking-[0.2em] text-muted-foreground">{label}</label>
       <input
         name={name}
-        type="text"
+        type={type}
         className="mt-3 w-full border-b border-border bg-transparent py-3 text-sm text-foreground outline-none focus:border-accent"
       />
     </div>
