@@ -58,7 +58,7 @@ function Index() {
               <em className="font-normal italic text-accent">for travel.</em>
             </h1>
             <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground">
-              Asif Tours &amp; BigBro Travel Hub craft slow, well-considered journeys across
+              Asif Tours &amp; Travels craft slow, well-considered journeys across
               Kerala, Karnataka and Tamil Nadu — from misty hills to coastal sunsets.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -88,9 +88,8 @@ function Index() {
           </div>
           <div className="lg:col-span-7">
             <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
-              Asif Adhil Group of Concern brings together two trusted travel houses —
-              <span className="text-foreground"> Asif Holidays</span> and
-              <span className="text-foreground"> BigBro Travel Hub</span>. From stunning
+              Asif Adhil Group of Concern brings together trusted travel expertise under
+              <span className="text-foreground"> Asif Holidays</span>. From stunning
               landscapes to vibrant cultures, we design trips that pay attention to every
               detail. Our customer-first approach has made satisfaction our quiet trademark.
             </p>
