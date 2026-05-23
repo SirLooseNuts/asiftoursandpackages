@@ -7,7 +7,7 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact — Asif Tours & Travels, Kollam Kerala" },
-      { name: "description", content: "Call +91 89210 62797 or visit us at Kadakkal, Chithara, Kollam, Kerala. Plan your next journey with Asif Tours & BigBro Travel Hub." },
+      { name: "description", content: "Call +91 89210 62797 or visit us at Kadakkal, Chithara, Kollam, Kerala. Plan your next journey with Asif Tours & Travels." },
       { property: "og:title", content: "Contact Asif Tours & Travels" },
       { property: "og:description", content: "Plan a custom tour or bus rental. Kadakkal, Chithara, Kollam — Kerala." },
     ],
@@ -38,7 +38,7 @@ export default function ContactPage() {
               <ContactRow icon={Phone} label="Call" lines={["+91 89210 62797", "+91 96451 15695"]} href="tel:+918921062797" />
               <ContactRow icon={MapPin} label="Visit" lines={["Kadakkal, Chithara", "Kollam — Trivandrum, Kerala"]} href="https://www.google.com/maps/place/Asif+Tours+And+Travels/@8.8271237,76.9206295,17z" />
               <ContactRow icon={Instagram} label="Asif Holidays" lines={["@asif_holidays_official"]} href="https://www.instagram.com/asif_holidays_official/" />
-              <ContactRow icon={Instagram} label="BigBro Travel Hub" lines={["@bigbro_travelhub_official"]} href="https://www.instagram.com/bigbro_travelhub_official/" />
+              
               <ContactRow icon={Mail} label="Email" lines={["bookings@asiftravels.in"]} href="mailto:bookings@asiftravels.in" />
             </div>
           </div>

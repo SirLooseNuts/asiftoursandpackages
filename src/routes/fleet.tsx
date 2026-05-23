@@ -7,7 +7,7 @@ import { ArrowUpRight, BusFront, Car, Plane, Building2 } from "lucide-react";
 export const Route = createFileRoute("/fleet")({
   head: () => ({
     meta: [
-      { title: "Fleet & Services — Asif Tours & BigBro Travel Hub" },
+      { title: "Fleet & Services — Asif Tours & Travels" },
       { name: "description", content: "Luxury and budget bus rentals, sedans, SUVs and tempo travellers. Outstation, airport pickup, corporate and pilgrimage travel." },
       { property: "og:title", content: "Fleet & Services — Asif Tours" },
       { property: "og:description", content: "AC / Non-AC coaches, premium cars and chauffeur-driven travel across South India." },

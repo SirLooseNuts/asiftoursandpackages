@@ -9,9 +9,8 @@ export function SiteFooter() {
           <div className="md:col-span-2">
             <div className="font-display text-3xl text-foreground">Asif Adhil Group of Concern</div>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
-              Fifteen years of crafting journeys across South India. Two trusted names —
-              <span className="text-foreground"> Asif Holidays</span> and
-              <span className="text-foreground"> BigBro Travel Hub</span> — one promise of
+              Fifteen years of crafting journeys across South India. A trusted name —
+              <span className="text-foreground"> Asif Holidays</span> — one promise of
               comfort, safety and quiet luxury.
             </p>
             <div className="hairline mt-8 max-w-xs" />
@@ -36,10 +35,6 @@ export function SiteFooter() {
               <li className="flex items-center gap-2">
                 <Instagram size={14} className="text-accent" />
                 <a href="https://www.instagram.com/asif_holidays_official/" target="_blank" rel="noreferrer" className="hover:text-foreground">@asif_holidays_official</a>
-              </li>
-              <li className="flex items-center gap-2">
-                <Instagram size={14} className="text-accent" />
-                <a href="https://www.instagram.com/bigbro_travelhub_official/" target="_blank" rel="noreferrer" className="hover:text-foreground">@bigbro_travelhub_official</a>
               </li>
             </ul>
           </div>

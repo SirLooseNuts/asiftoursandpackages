@@ -73,7 +73,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Asif Tours & Travels — Curated Journeys across South India" },
-      { name: "description", content: "Asif Adhil Group of Concern — Asif Tours & BigBro Travel Hub. Bespoke tours, luxury coach rentals and pilgrimage packages from Kollam & Trivandrum, Kerala." },
+      { name: "description", content: "Asif Adhil Group of Concern — Asif Tours & Travels. Bespoke tours, luxury coach rentals and pilgrimage packages from Kollam & Trivandrum, Kerala." },
       { name: "author", content: "Asif Adhil Group of Concern" },
       { property: "og:title", content: "Asif Tours & Travels — Curated Journeys" },
       { property: "og:description", content: "15+ years of crafted travel. Tours, packages and luxury coaches across Kerala, Karnataka & Tamil Nadu." },
