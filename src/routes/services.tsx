@@ -120,12 +120,14 @@ function ServicesPage() {
               Tell us what you need — we&apos;ll handle the rest.
             </h2>
           </div>
-          <Link
-            to="/contact"
+          <a
+            href={`https://wa.me/918921062797?text=${encodeURIComponent("Hi Asif Tours & Travels, I'd like to enquire about your services. Please share details.")}`}
+            target="_blank"
+            rel="noreferrer"
             className="inline-flex items-center gap-3 bg-primary px-7 py-4 text-xs uppercase tracking-[0.25em] text-primary-foreground hover:bg-primary/90"
           >
             Start an enquiry <ArrowUpRight size={14} />
-          </Link>
+          </a>
         </div>
       </section>
 
