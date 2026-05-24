@@ -99,12 +99,14 @@ function ServicesPage() {
               <s.icon className="text-accent" size={26} strokeWidth={1.25} />
               <h3 className="mt-8 font-display text-2xl text-foreground">{s.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
-              <Link
-                to="/contact"
+              <a
+                href={`https://wa.me/918921062797?text=${encodeURIComponent(`Hi Asif Tours & Travels, I'm interested in ${s.title}. Please share details and pricing.`)}`}
+                target="_blank"
+                rel="noreferrer"
                 className="mt-8 inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-accent"
               >
                 Enquire <ArrowUpRight size={14} />
-              </Link>
+              </a>
             </div>
           ))}
         </div>
