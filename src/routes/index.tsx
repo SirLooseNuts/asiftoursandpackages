@@ -69,9 +69,14 @@ function Index() {
                 View Packages
                 <ArrowUpRight size={14} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </Link>
-              <Link to="/contact" className="text-xs uppercase tracking-[0.25em] text-foreground underline-offset-8 hover:underline">
+              <a
+                href={`https://wa.me/918921062797?text=${encodeURIComponent("Hi Asif Tours & Travels, I'd like to plan a custom trip. Please help me design an itinerary.")}`}
+                target="_blank"
+                rel="noreferrer"
+                className="text-xs uppercase tracking-[0.25em] text-foreground underline-offset-8 hover:underline"
+              >
                 Plan a custom trip
-              </Link>
+              </a>
             </div>
           </div>
         </div>
