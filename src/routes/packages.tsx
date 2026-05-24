@@ -165,9 +165,14 @@ export default function PackagesPage() {
               Don&apos;t see your dream route? We&apos;ll design it.
             </h2>
           </div>
-          <Link to="/contact" className="inline-flex items-center gap-3 bg-primary px-7 py-4 text-xs uppercase tracking-[0.25em] text-primary-foreground hover:bg-primary/90">
+          <a
+            href={`https://wa.me/918921062797?text=${encodeURIComponent("Hi Asif Tours & Travels, I'd like a custom quote for a tour package. Please share details and pricing.")}`}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-3 bg-primary px-7 py-4 text-xs uppercase tracking-[0.25em] text-primary-foreground hover:bg-primary/90"
+          >
             Request a quote <ArrowUpRight size={14} />
-          </Link>
+          </a>
         </div>
       </section>
 
