@@ -69,9 +69,14 @@ function Index() {
                 View Packages
                 <ArrowUpRight size={14} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </Link>
-              <Link to="/contact" className="text-xs uppercase tracking-[0.25em] text-foreground underline-offset-8 hover:underline">
+              <a
+                href={`https://wa.me/918921062797?text=${encodeURIComponent("Hi Asif Tours & Travels, I'd like to plan a custom trip. Please help me design an itinerary.")}`}
+                target="_blank"
+                rel="noreferrer"
+                className="text-xs uppercase tracking-[0.25em] text-foreground underline-offset-8 hover:underline"
+              >
                 Plan a custom trip
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -161,9 +166,14 @@ function Index() {
               Tell us where you&apos;d like to wake up tomorrow.
             </h2>
           </div>
-          <Link to="/contact" className="inline-flex items-center gap-3 border border-background/30 px-7 py-4 text-xs uppercase tracking-[0.25em] text-background transition-colors hover:bg-accent hover:text-accent-foreground hover:border-accent">
+          <a
+            href={`https://wa.me/918921062797?text=${encodeURIComponent("Hi Asif Tours & Travels, I'd like to plan my journey. Please help me with an itinerary.")}`}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-3 border border-background/30 px-7 py-4 text-xs uppercase tracking-[0.25em] text-background transition-colors hover:bg-accent hover:text-accent-foreground hover:border-accent"
+          >
             Plan my journey <ArrowUpRight size={14} />
-          </Link>
+          </a>
         </div>
       </section>
 

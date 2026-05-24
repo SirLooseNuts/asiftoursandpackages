@@ -111,9 +111,14 @@ export default function FleetPage() {
         </div>
         <div className="mt-16 flex flex-wrap items-center justify-between gap-6 border-t border-border pt-10">
           <p className="font-display text-2xl text-foreground">Ready to ride?</p>
-          <Link to="/contact" className="inline-flex items-center gap-3 bg-primary px-7 py-4 text-xs uppercase tracking-[0.25em] text-primary-foreground hover:bg-primary/90">
+          <a
+            href={`https://wa.me/918921062797?text=${encodeURIComponent("Hi Asif Tours & Travels, I'd like to book a coach. Please share availability and pricing.")}`}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-3 bg-primary px-7 py-4 text-xs uppercase tracking-[0.25em] text-primary-foreground hover:bg-primary/90"
+          >
             Book a coach <ArrowUpRight size={14} />
-          </Link>
+          </a>
         </div>
       </section>
 
