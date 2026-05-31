@@ -63,7 +63,7 @@ export default function ContactPage() {
               <ContactRow icon={MapPin} label="Visit" lines={["Kadakkal, Chithara", "Kollam — Trivandrum, Kerala"]} href="https://www.google.com/maps/place/Asif+Tours+And+Travels/@8.8271237,76.9206295,17z" />
               <ContactRow icon={Instagram} label="Asif Holidays" lines={["@asif_holidays_official"]} href="https://www.instagram.com/asif_holidays_official/" />
               
-              <ContactRow icon={Mail} label="Email" lines={["asiftourspackages@gmail.com", "bookings@asiftravels.in"]} href="mailto:asiftourspackages@gmail.com" />
+              <ContactRow icon={Mail} label="Email" lines={["asiftourspackages@gmail.com"]} href="mailto:asiftourspackages@gmail.com" />
             </div>
           </div>
 
