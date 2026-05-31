@@ -97,9 +97,9 @@ function AboutPage() {
             <div className="overflow-hidden bg-card">
               <img
                 src={aboutTravelers}
-                alt="ASIF coaches parked side-by-side"
-                width={640}
-                height={517}
+                alt="ASIF coaches animation"
+                width={320}
+                height={320}
                 className="w-full h-auto transition-transform duration-700 hover:scale-102"
               />
             </div>

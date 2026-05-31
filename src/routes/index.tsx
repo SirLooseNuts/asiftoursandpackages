@@ -114,7 +114,7 @@ function Index() {
         </div>
 
         <div className="mt-20 overflow-hidden bg-card">
-          <img src={aboutTravelers} alt="ASIF coaches parked side-by-side" width={640} height={517} loading="lazy" className="w-full h-auto" />
+          <img src={aboutTravelers} alt="ASIF coaches animation" width={320} height={320} loading="lazy" className="w-full h-auto" />
         </div>
       </section>
 
