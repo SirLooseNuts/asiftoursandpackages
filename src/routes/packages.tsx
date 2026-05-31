@@ -3,6 +3,124 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ArrowUpRight } from "lucide-react";
 import { groups, services } from "@/lib/packages";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
+const destinationList = [
+  {
+    state: "Kerala",
+    img: "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=600&q=80",
+    items: [
+      "Thenmala",
+      "Palaruvi Falls",
+      "Kochi",
+      "Wonderla Kochi",
+      "Lulu Mall",
+      "Athirappilly Falls",
+      "Vazhachal Falls",
+      "Dream World Water Park",
+      "Silver Storm Water Theme Park",
+      "Ponmudi",
+      "Mankayam",
+      "Peppara Dam",
+      "Munnar",
+      "Thekkady",
+      "Vagamon",
+      "Wayanad",
+      "Guruvayoor",
+    ],
+  },
+  {
+    state: "Tamil Nadu",
+    img: "https://images.unsplash.com/photo-1580541631971-e40df2133a34?auto=format&fit=crop&w=600&q=80",
+    items: [
+      "Courtallam Falls",
+      "Thirparappu Falls",
+      "Vattakottai Fort",
+      "Kanyakumari",
+      "Kodaikanal",
+      "Ooty",
+      "Black Thunder Theme Park",
+      "Madurai",
+      "Palani",
+      "Hogenakkal Falls",
+      "Rameswaram",
+      "Velankanni",
+      "Chennai",
+    ],
+  },
+  {
+    state: "Karnataka",
+    img: "https://images.unsplash.com/photo-1590050752117-238cb0612b1b?auto=format&fit=crop&w=600&q=80",
+    items: [
+      "Coorg",
+      "Mysore",
+      "Belur",
+      "Bangalore",
+      "Wonderla Bangalore",
+      "Malpe Beach",
+      "Chikmagalur",
+      "Mookambika",
+      "Dandeli",
+    ],
+  },
+  {
+    state: "Telangana",
+    img: "https://images.unsplash.com/photo-1608958415714-36a5a22bbd72?auto=format&fit=crop&w=600&q=80",
+    items: ["Hyderabad"],
+  },
+  {
+    state: "Puducherry",
+    img: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=600&q=80",
+    items: ["Pondicherry"],
+  },
+  {
+    state: "Goa",
+    img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
+    items: ["Goa"],
+  },
+  {
+    state: "Delhi",
+    img: "https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=600&q=80",
+    items: ["Delhi"],
+  },
+  {
+    state: "Uttar Pradesh",
+    img: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=600&q=80",
+    items: ["Agra"],
+  },
+  {
+    state: "Uttarakhand",
+    img: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=600&q=80",
+    items: ["Nainital"],
+  },
+  {
+    state: "Himachal Pradesh",
+    img: "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=600&q=80",
+    items: ["Shimla", "Kullu", "Manali"],
+  },
+  {
+    state: "Chandigarh",
+    img: "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=600&q=80",
+    items: ["Chandigarh"],
+  },
+  {
+    state: "West Bengal",
+    img: "https://images.unsplash.com/photo-1558431382-27e303142255?auto=format&fit=crop&w=600&q=80",
+    items: ["Kolkata", "Darjeeling"],
+  },
+  {
+    state: "Sikkim",
+    img: "https://images.unsplash.com/photo-1571536802807-30451e3955d8?auto=format&fit=crop&w=600&q=80",
+    items: ["Gangtok", "Sikkim"],
+  },
+];
 
 export const Route = createFileRoute("/packages")({
   head: () => ({
@@ -30,7 +148,63 @@ export default function PackagesPage() {
           From a single-day escape to a week across South India — every itinerary is
           tailored, with experienced guides, comfortable coaches and curated stays.
         </p>
+
+        <div className="mt-8">
+          <Dialog>
+            <DialogTrigger asChild>
+              <button className="group inline-flex items-center gap-2 bg-primary px-6 py-3.5 text-xs uppercase tracking-[0.25em] text-primary-foreground transition-all hover:bg-primary/90 cursor-pointer">
+                Explore Destinations
+                <ArrowUpRight size={14} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </button>
+            </DialogTrigger>
+            <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto p-6 md:p-10">
+              <DialogHeader className="border-b border-border/60 pb-6">
+                <DialogTitle className="font-display text-3xl text-foreground sm:text-4xl">
+                  Complete List of Tour Destinations
+                </DialogTitle>
+                <DialogDescription className="mt-2 text-sm text-muted-foreground">
+                  Explore the states and cities we travel to.
+                </DialogDescription>
+              </DialogHeader>
+              <div className="grid gap-6 pt-6 sm:grid-cols-2 md:grid-cols-3">
+                {destinationList.map((d) => (
+                  <div
+                    key={d.state}
+                    className="group flex flex-col overflow-hidden border border-border bg-card transition-all duration-300 hover:border-accent/40 hover:shadow-sm"
+                  >
+                    <div className="relative h-32 overflow-hidden bg-muted">
+                      <img
+                        src={d.img}
+                        alt={`${d.state} scenery`}
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent" />
+                      <h3 className="absolute bottom-3 left-4 font-display text-xl text-foreground">
+                        {d.state}
+                      </h3>
+                    </div>
+                    <div className="flex-1 p-5">
+                      <ul className="space-y-2">
+                        {d.items.map((item) => (
+                          <li
+                            key={item}
+                            className="flex items-start gap-2.5 text-xs text-muted-foreground transition-colors duration-150 hover:text-foreground"
+                          >
+                            <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </DialogContent>
+          </Dialog>
+        </div>
       </section>
+
 
       <section className="mx-auto max-w-7xl px-6 pb-12 lg:px-10">
         <div className="flex flex-wrap gap-3">
