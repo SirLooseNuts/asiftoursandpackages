@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import fleetBus from "@/assets/fleet-bus.jpg";
+import fleetBus from "@/assets/fleet-bus.webp";
 import { ArrowUpRight, BusFront, Car, Plane, Building2 } from "lucide-react";
 
 export const Route = createFileRoute("/fleet")({

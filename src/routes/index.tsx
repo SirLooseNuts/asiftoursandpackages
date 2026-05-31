@@ -2,12 +2,12 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Compass, Shield, Sparkles } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import heroMunnar from "@/assets/hero-munnar.jpg";
-import destBackwaters from "@/assets/dest-backwaters.jpg";
-import destOoty from "@/assets/dest-ooty.jpg";
-import destCoorg from "@/assets/dest-coorg.jpg";
-import destKanyakumari from "@/assets/dest-kanyakumari.jpg";
-import destGoa from "@/assets/dest-goa.jpg";
+import heroMunnar from "@/assets/hero-munnar.webp";
+import destBackwaters from "@/assets/dest-backwaters.webp";
+import destOoty from "@/assets/dest-ooty.webp";
+import destCoorg from "@/assets/dest-coorg.webp";
+import destKanyakumari from "@/assets/dest-kanyakumari.webp";
+import destGoa from "@/assets/dest-goa.webp";
 import aboutTravelers from "@/assets/about-travelers.webp";
 
 export const Route = createFileRoute("/")({
@@ -46,13 +46,15 @@ function Index() {
       <section className="relative isolate overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <video
-            src="/hero-video.mp4"
             autoPlay
             loop
             muted
             playsInline
             className="h-full w-full object-cover"
-          />
+          >
+            <source src="/hero-video.webm" type="video/webm" />
+            <source src="/hero-video.mp4" type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/10 to-background" />
         </div>
         <div className="mx-auto flex min-h-[88vh] max-w-7xl flex-col justify-end px-6 pb-20 pt-40 lg:px-10">
