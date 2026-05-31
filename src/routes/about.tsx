@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { ArrowUpRight, Compass, Shield, Sparkles, Heart } from "lucide-react";
-import aboutTravelers from "@/assets/about-travelers.webp";
+import aboutHero from "@/assets/about-hero.webp";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -96,10 +96,10 @@ function AboutPage() {
           <div className="lg:col-span-7">
             <div className="overflow-hidden bg-card">
               <img
-                src={aboutTravelers}
-                alt="ASIF coaches parked side-by-side"
+                src={aboutHero}
+                alt="ASIF luxury coach moving on tree-lined road"
                 width={1080}
-                height={533}
+                height={716}
                 className="w-full h-auto transition-transform duration-700 hover:scale-102"
               />
             </div>
