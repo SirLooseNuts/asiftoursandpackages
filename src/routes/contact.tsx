@@ -1,9 +1,25 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState, useEffect } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Phone, MapPin, Instagram, Mail, ArrowUpRight } from "lucide-react";
+import { groups } from "@/lib/packages";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export const Route = createFileRoute("/contact")({
+  validateSearch: (search: Record<string, unknown>): { route?: string } => {
+    return {
+      route: typeof search.route === "string" ? search.route : undefined,
+    };
+  },
   head: () => ({
     meta: [
       { title: "Contact — Asif Tours & Travels, Kollam Kerala" },
@@ -16,6 +32,14 @@ export const Route = createFileRoute("/contact")({
 });
 
 export default function ContactPage() {
+  const { route: selectedRoute } = Route.useSearch();
+  const [routeVal, setRouteVal] = useState(selectedRoute || "");
+
+  useEffect(() => {
+    if (selectedRoute) {
+      setRouteVal(selectedRoute);
+    }
+  }, [selectedRoute]);
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
@@ -39,7 +63,7 @@ export default function ContactPage() {
               <ContactRow icon={MapPin} label="Visit" lines={["Kadakkal, Chithara", "Kollam — Trivandrum, Kerala"]} href="https://www.google.com/maps/place/Asif+Tours+And+Travels/@8.8271237,76.9206295,17z" />
               <ContactRow icon={Instagram} label="Asif Holidays" lines={["@asif_holidays_official"]} href="https://www.instagram.com/asif_holidays_official/" />
               
-              <ContactRow icon={Mail} label="Email" lines={["bookings@asiftravels.in"]} href="mailto:bookings@asiftravels.in" />
+              <ContactRow icon={Mail} label="Email" lines={["asiftourspackages@gmail.com", "bookings@asiftravels.in"]} href="mailto:asiftourspackages@gmail.com" />
             </div>
           </div>
 
@@ -49,11 +73,13 @@ export default function ContactPage() {
               e.preventDefault();
               const f = new FormData(e.currentTarget);
               const text = [
+                `*New Quote Request*`,
+                ``,
                 `Name: ${f.get("name")}`,
                 `Phone / WhatsApp: ${f.get("phone")}`,
                 `Pickup Location: ${f.get("pickup")}`,
                 `Date: ${f.get("date")}`,
-                `Package / Route: ${f.get("route")}`,
+                `Package / Route: ${routeVal || f.get("route") || ""}`,
                 `Group Size: ${f.get("group")}`,
                 `Message: ${f.get("message")}`,
               ].join("\n");
@@ -67,7 +93,33 @@ export default function ContactPage() {
               <Field name="phone" label="Phone / WhatsApp" type="tel" />
               <Field name="pickup" label="Pickup location" />
               <Field name="date" label="Travel date" type="date" />
-              <Field name="route" label="Package / Travel route" />
+              <Field name="route" label="Package / Travel route">
+                <Select name="route" value={routeVal} onValueChange={setRouteVal}>
+                  <SelectTrigger className="mt-3 w-full border-b border-border bg-transparent py-3 text-sm text-foreground outline-none rounded-none border-t-0 border-l-0 border-r-0 shadow-none focus:ring-0 focus:border-accent h-auto px-0 cursor-pointer flex items-center justify-between text-left data-[placeholder]:text-muted-foreground/50">
+                    <SelectValue placeholder="Select a package or route" />
+                  </SelectTrigger>
+                  <SelectContent className="max-h-[300px] bg-card border-border text-foreground">
+                    <SelectGroup>
+                      <SelectLabel className="text-muted-foreground text-[10px] uppercase tracking-[0.2em] px-3 py-2">Custom Option</SelectLabel>
+                      <SelectItem value="Custom Route / Other Destination" className="text-sm cursor-pointer hover:bg-accent hover:text-accent-foreground font-sans">
+                        Custom Route / Other Destination
+                      </SelectItem>
+                    </SelectGroup>
+                    {groups.map((group) => (
+                      <SelectGroup key={group.days}>
+                        <SelectLabel className="text-accent text-[10px] uppercase tracking-[0.2em] px-3 py-2 mt-2 border-t border-border/40">
+                          {group.days}
+                        </SelectLabel>
+                        {group.items.map((item) => (
+                          <SelectItem key={item} value={item} className="text-sm cursor-pointer hover:bg-accent hover:text-accent-foreground font-sans">
+                            {item}
+                          </SelectItem>
+                        ))}
+                      </SelectGroup>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </Field>
               <Field name="group" label="Group size" type="number" />
             </div>
             <div className="mt-6">
@@ -127,15 +179,29 @@ function ContactRow({
   );
 }
 
-function Field({ name, label, type = "text" }: { name: string; label: string; type?: string }) {
+function Field({
+  name,
+  label,
+  type = "text",
+  children,
+}: {
+  name: string;
+  label: string;
+  type?: string;
+  children?: React.ReactNode;
+}) {
   return (
     <div>
       <label className="block text-xs uppercase tracking-[0.2em] text-muted-foreground">{label}</label>
-      <input
-        name={name}
-        type={type}
-        className="mt-3 w-full border-b border-border bg-transparent py-3 text-sm text-foreground outline-none focus:border-accent"
-      />
+      {children ? (
+        children
+      ) : (
+        <input
+          name={name}
+          type={type}
+          className="mt-3 w-full border-b border-border bg-transparent py-3 text-sm text-foreground outline-none focus:border-accent"
+        />
+      )}
     </div>
   );
 }

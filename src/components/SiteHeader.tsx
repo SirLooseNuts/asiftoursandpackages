@@ -1,12 +1,14 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import logoUrl from "@/assets/logo.png";
 
 const nav = [
   { to: "/", label: "Home" },
   { to: "/packages", label: "Packages" },
   { to: "/services", label: "Services" },
   { to: "/fleet", label: "Fleet" },
+  { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -14,10 +16,13 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
-        <Link to="/" className="group flex items-baseline gap-2">
-          <span className="font-display text-2xl tracking-tight text-foreground">Asif</span>
-          <span className="text-[10px] uppercase tracking-[0.32em] text-accent">Tours &amp; Travels</span>
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-10">
+        <Link to="/" className="group flex items-center gap-3">
+          <img src={logoUrl} alt="ASIF Logo" className="h-12 w-auto object-contain rounded-sm" />
+          <div className="flex flex-col">
+            <span className="font-display text-xl font-bold tracking-tight text-foreground leading-none">ASIF</span>
+            <span className="text-[9px] uppercase tracking-[0.25em] text-accent mt-1 leading-none">tours and packages</span>
+          </div>
         </Link>
         <nav className="hidden items-center gap-10 md:flex">
           {nav.map((n) => (

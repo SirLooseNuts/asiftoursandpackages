@@ -8,7 +8,7 @@ import destOoty from "@/assets/dest-ooty.jpg";
 import destCoorg from "@/assets/dest-coorg.jpg";
 import destKanyakumari from "@/assets/dest-kanyakumari.jpg";
 import destGoa from "@/assets/dest-goa.jpg";
-import aboutTravelers from "@/assets/about-travelers.jpg";
+import aboutTravelers from "@/assets/about-travelers.webp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -45,7 +45,14 @@ function Index() {
       {/* Hero */}
       <section className="relative isolate overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          <img src={heroMunnar} alt="Misty tea hills of Munnar" width={1920} height={1080} className="h-full w-full object-cover" />
+          <video
+            src="/hero-video.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="h-full w-full object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/10 to-background" />
         </div>
         <div className="mx-auto flex min-h-[88vh] max-w-7xl flex-col justify-end px-6 pb-20 pt-40 lg:px-10">
@@ -106,8 +113,8 @@ function Index() {
           </div>
         </div>
 
-        <div className="mt-20 overflow-hidden">
-          <img src={aboutTravelers} alt="Travellers boarding an Asif coach" width={1280} height={640} loading="lazy" className="h-[420px] w-full object-cover md:h-[520px]" />
+        <div className="mt-20 overflow-hidden bg-card">
+          <img src={aboutTravelers} alt="ASIF coaches parked side-by-side" width={1080} height={873} loading="lazy" className="w-full h-auto" />
         </div>
       </section>
 
@@ -140,8 +147,8 @@ function Index() {
 
         <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {destinations.map((d, i) => (
-            <article key={d.name} className={`group relative overflow-hidden ${i === 0 ? "sm:col-span-2 lg:col-span-2 lg:row-span-2" : ""}`}>
-              <div className={`relative overflow-hidden ${i === 0 ? "aspect-[16/12]" : "aspect-[4/5]"}`}>
+            <article key={d.name} className={`group relative overflow-hidden flex flex-col ${i === 0 ? "sm:col-span-2 lg:col-span-2 lg:row-span-2" : ""}`}>
+              <div className={`relative overflow-hidden w-full flex-1 ${i === 0 ? "aspect-[16/12] lg:aspect-auto lg:h-full" : "aspect-[4/5]"}`}>
                 <img src={d.img} alt={d.name} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6">
