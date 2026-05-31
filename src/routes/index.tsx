@@ -9,6 +9,8 @@ import destCoorg from "@/assets/dest-coorg.webp";
 import destKanyakumari from "@/assets/dest-kanyakumari.webp";
 import destGoa from "@/assets/dest-goa.webp";
 import aboutTravelers from "@/assets/about-travelers.webp";
+import heroVideoWebm from "@/assets/hero-video.webm";
+import heroVideoMp4 from "@/assets/hero-video.mp4";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -53,8 +55,8 @@ function Index() {
             poster={heroMunnar}
             className="h-full w-full object-cover"
           >
-            <source src="/hero-video.webm" type="video/webm" />
-            <source src="/hero-video.mp4" type="video/mp4" />
+            <source src={heroVideoWebm} type="video/webm" />
+            <source src={heroVideoMp4} type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/10 to-background" />
         </div>
