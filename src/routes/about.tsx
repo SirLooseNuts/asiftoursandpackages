@@ -98,8 +98,8 @@ function AboutPage() {
               <img
                 src={aboutTravelers}
                 alt="ASIF coaches animation"
-                width={320}
-                height={320}
+                width={640}
+                height={640}
                 className="w-full h-auto transition-transform duration-700 hover:scale-102"
               />
             </div>

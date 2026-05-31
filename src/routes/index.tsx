@@ -50,6 +50,7 @@ function Index() {
             loop
             muted
             playsInline
+            poster={heroMunnar}
             className="h-full w-full object-cover"
           >
             <source src="/hero-video.webm" type="video/webm" />
@@ -116,7 +117,7 @@ function Index() {
         </div>
 
         <div className="mt-20 overflow-hidden bg-card">
-          <img src={aboutTravelers} alt="ASIF coaches animation" width={320} height={320} loading="lazy" className="w-full h-auto" />
+          <img src={aboutTravelers} alt="ASIF coaches animation" width={640} height={640} loading="lazy" className="w-full h-auto" />
         </div>
       </section>
 
