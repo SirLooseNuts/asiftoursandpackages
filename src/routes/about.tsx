@@ -98,8 +98,8 @@ function AboutPage() {
               <img
                 src={aboutTravelers}
                 alt="ASIF coaches parked side-by-side"
-                width={1080}
-                height={873}
+                width={640}
+                height={517}
                 className="w-full h-auto transition-transform duration-700 hover:scale-102"
               />
             </div>
