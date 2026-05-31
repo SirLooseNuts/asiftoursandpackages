@@ -1,11 +1,18 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown, MapPin } from "lucide-react";
 import logoUrl from "@/assets/logo.webp";
+import { ExplorePackagesModal } from "@/components/ExplorePackagesModal";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const nav = [
   { to: "/", label: "Home" },
-  { to: "/packages", label: "Packages" },
+  { to: "/packages", label: "Packages", isDropdown: true },
   { to: "/services", label: "Services" },
   { to: "/fleet", label: "Fleet" },
   { to: "/about", label: "About" },
@@ -14,62 +21,119 @@ const nav = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-10">
-        <Link to="/" className="group flex items-center gap-3">
-          <img src={logoUrl} alt="ASIF Logo" className="h-12 w-auto object-contain rounded-sm" />
-          <div className="flex flex-col">
-            <span className="font-display text-xl font-bold tracking-tight text-foreground leading-none">ASIF</span>
-            <span className="text-[9px] uppercase tracking-[0.25em] text-accent mt-1 leading-none">tours and packages</span>
-          </div>
-        </Link>
-        <nav className="hidden items-center gap-10 md:flex">
-          {nav.map((n) => (
-            <Link
-              key={n.to}
-              to={n.to}
-              activeOptions={{ exact: n.to === "/" }}
-              className="text-sm tracking-wide text-muted-foreground transition-colors hover:text-foreground"
-              activeProps={{ className: "text-foreground" }}
-            >
-              {n.label}
-            </Link>
-          ))}
-        </nav>
-        <a
-          href="tel:+918921062797"
-          className="hidden rounded-sm border border-accent/50 px-4 py-2 text-xs uppercase tracking-[0.2em] text-accent transition-colors hover:bg-accent hover:text-accent-foreground md:inline-block"
-        >
-          +91 89210 62797
-        </a>
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="text-foreground md:hidden"
-          aria-label="Menu"
-        >
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
-      </div>
-      {open && (
-        <div className="border-t border-border/60 bg-background md:hidden">
-          <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6">
-            {nav.map((n) => (
-              <Link
-                key={n.to}
-                to={n.to}
-                onClick={() => setOpen(false)}
-                className="text-base text-foreground"
-              >
-                {n.label}
-              </Link>
-            ))}
-            <a href="tel:+918921062797" className="text-sm text-accent">
-              Call +91 89210 62797
-            </a>
-          </div>
+    <>
+      <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-10">
+          <Link to="/" className="group flex items-center gap-3">
+            <img src={logoUrl} alt="ASIF Logo" className="h-12 w-auto object-contain rounded-sm" />
+            <div className="flex flex-col">
+              <span className="font-display text-xl font-bold tracking-tight text-foreground leading-none">ASIF</span>
+              <span className="text-[9px] uppercase tracking-[0.25em] text-accent mt-1 leading-none">tours and packages</span>
+            </div>
+          </Link>
+          <nav className="hidden items-center gap-10 md:flex">
+            {nav.map((n) => {
+              if (n.isDropdown) {
+                return (
+                  <DropdownMenu key={n.to}>
+                    <DropdownMenuTrigger className="flex items-center gap-1 text-sm tracking-wide text-muted-foreground transition-colors hover:text-foreground focus:outline-none">
+                      {n.label} <ChevronDown size={14} />
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="start" className="w-48 bg-background border border-border/60 p-2">
+                      <DropdownMenuItem asChild className="cursor-pointer mb-1 p-2 focus:bg-accent/10 focus:text-accent">
+                        <Link to={n.to} className="w-full text-sm">
+                          Packages
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem 
+                        className="cursor-pointer p-2 focus:bg-accent/10 focus:text-accent flex items-center gap-2"
+                        onSelect={() => setModalOpen(true)}
+                      >
+                        <MapPin size={14} />
+                        Explore Packages
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                );
+              }
+
+              return (
+                <Link
+                  key={n.to}
+                  to={n.to}
+                  activeOptions={{ exact: n.to === "/" }}
+                  className="text-sm tracking-wide text-muted-foreground transition-colors hover:text-foreground"
+                  activeProps={{ className: "text-foreground" }}
+                >
+                  {n.label}
+                </Link>
+              );
+            })}
+          </nav>
+          <a
+            href="tel:+918921062797"
+            className="hidden rounded-sm border border-accent/50 px-4 py-2 text-xs uppercase tracking-[0.2em] text-accent transition-colors hover:bg-accent hover:text-accent-foreground md:inline-block"
+          >
+            +91 89210 62797
+          </a>
+          <button
+            onClick={() => setOpen((v) => !v)}
+            className="text-foreground md:hidden"
+            aria-label="Menu"
+          >
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
-      )}
-    </header>
+        {open && (
+          <div className="border-t border-border/60 bg-background md:hidden">
+            <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6">
+              {nav.map((n) => {
+                if (n.isDropdown) {
+                  return (
+                    <div key={n.to} className="flex flex-col gap-3">
+                      <Link
+                        to={n.to}
+                        onClick={() => setOpen(false)}
+                        className="text-base text-foreground"
+                      >
+                        Packages
+                      </Link>
+                      <button
+                        onClick={() => {
+                          setOpen(false);
+                          setModalOpen(true);
+                        }}
+                        className="text-base text-foreground text-left flex items-center gap-2 pl-4"
+                      >
+                        <MapPin size={16} /> Explore Packages
+                      </button>
+                    </div>
+                  );
+                }
+
+                return (
+                  <Link
+                    key={n.to}
+                    to={n.to}
+                    onClick={() => setOpen(false)}
+                    className="text-base text-foreground"
+                  >
+                    {n.label}
+                  </Link>
+                );
+              })}
+              <a href="tel:+918921062797" className="text-sm text-accent">
+                Call +91 89210 62797
+              </a>
+            </div>
+          </div>
+        )}
+      </header>
+
+      <ExplorePackagesModal open={modalOpen} onOpenChange={setModalOpen} />
+    </>
   );
 }
