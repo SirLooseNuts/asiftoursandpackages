@@ -10,6 +10,7 @@ import {
 
 import appCss from "../styles.css?url";
 import { Analytics } from "@vercel/analytics/react";
+import logoUrl from "@/assets/logo.webp";
 
 function NotFoundComponent() {
   return (
@@ -82,6 +83,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
+      {
+        rel: "icon",
+        type: "image/webp",
+        href: logoUrl,
+      },
       {
         rel: "stylesheet",
         href: appCss,
