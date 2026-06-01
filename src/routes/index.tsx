@@ -15,7 +15,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Asif Tours & Travels — Curated Journeys across South India" },
-      { name: "description", content: "Bespoke tours, luxury coaches and pilgrimage packages from Kollam & Trivandrum. 15+ years of cherished travel memories." },
+      { name: "description", content: "Bespoke tours, luxury coaches and pilgrimage packages from Kollam & Trivandrum. 13+ years of cherished travel memories." },
       { property: "og:image", content: heroMunnar },
       { name: "twitter:image", content: heroMunnar },
     ],
@@ -58,7 +58,7 @@ function Index() {
         <div className="mx-auto flex min-h-[88vh] max-w-7xl flex-col justify-end px-6 pb-20 pt-40 lg:px-10">
           <div className="max-w-3xl">
             <div className="mb-6 inline-flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-accent">
-              <span className="h-px w-10 bg-accent" /> Est. 2010 · Kollam, Kerala
+              <span className="h-px w-10 bg-accent" /> Est. 2013 · Kollam, Kerala
             </div>
             <h1 className="text-balance font-display text-5xl leading-[1.05] text-foreground sm:text-6xl md:text-7xl lg:text-[5.5rem]">
               It&apos;s time<br />
@@ -95,7 +95,7 @@ function Index() {
           <div className="lg:col-span-5">
             <div className="text-xs uppercase tracking-[0.3em] text-accent">About</div>
             <h2 className="mt-6 font-display text-4xl leading-tight text-foreground md:text-5xl">
-              Fifteen years of turning journeys into memory.
+              Thirteen years of turning journeys into memory.
             </h2>
           </div>
           <div className="lg:col-span-7">
@@ -106,7 +106,7 @@ function Index() {
               detail. Our customer-first approach has made satisfaction our quiet trademark.
             </p>
             <div className="mt-10 grid grid-cols-3 gap-8">
-              <Stat k="15+" v="Years of journeys" />
+              <Stat k="13+" v="Years of journeys" />
               <Stat k="50k+" v="Happy travellers" />
               <Stat k="40+" v="Destinations" />
             </div>

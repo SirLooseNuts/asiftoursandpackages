@@ -11,13 +11,13 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Founded in 2010 in Kollam, Kerala, Asif Holidays brings over 15 years of trusted group travel, pilgrimage packages, and luxury coach bookings.",
+          "Founded in 2013 in Kollam, Kerala, Asif Holidays brings over 13 years of trusted group travel, pilgrimage packages, and luxury coach bookings.",
       },
       { property: "og:title", content: "About Us — Asif Tours & Travels" },
       {
         property: "og:description",
         content:
-          "The story of Asif Holidays — 15+ years of comfort, safety, and curated travel experiences across South India.",
+          "The story of Asif Holidays — 13+ years of comfort, safety, and curated travel experiences across South India.",
       },
     ],
   }),
@@ -74,7 +74,7 @@ function AboutPage() {
                 Our Story
               </h2>
               <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-                Since our founding in 2010, we have stayed true to one core philosophy: travel
+                Since our founding in 2013, we have stayed true to one core philosophy: travel
                 is not just about visiting new places, it is about how those places make you
                 feel. What started as a single coach service in Kollam has grown into a
                 comprehensive travel solution across Kerala, Karnataka, and Tamil Nadu.
@@ -87,7 +87,7 @@ function AboutPage() {
             </div>
             
             <div className="mt-10 grid grid-cols-3 gap-8 border-t border-border/60 pt-8">
-              <Stat k="15+" v="Years of journeys" />
+              <Stat k="13+" v="Years of journeys" />
               <Stat k="50k+" v="Happy travellers" />
               <Stat k="40+" v="Destinations" />
             </div>

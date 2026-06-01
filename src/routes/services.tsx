@@ -88,7 +88,7 @@ function ServicesPage() {
         </h1>
         <p className="mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground">
           Bookings, permits, rentals and bespoke planning — handled by a team that has spent
-          fifteen years on the road.
+          thirteen years on the road.
         </p>
       </section>
 

@@ -13,7 +13,7 @@ export function SiteFooter() {
               <div className="font-display text-3xl text-foreground">Asif Adhil Group of Concern</div>
             </div>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
-              Fifteen years of crafting journeys across South India. A trusted name —
+              Thirteen years of crafting journeys across South India. A trusted name —
               <span className="text-foreground"> Asif Holidays</span> — one promise of
               comfort, safety and quiet luxury.
             </p>

@@ -76,7 +76,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Asif Adhil Group of Concern — Asif Tours & Travels. Bespoke tours, luxury coach rentals and pilgrimage packages from Kollam & Trivandrum, Kerala." },
       { name: "author", content: "Asif Adhil Group of Concern" },
       { property: "og:title", content: "Asif Tours & Travels — Curated Journeys" },
-      { property: "og:description", content: "15+ years of crafted travel. Tours, packages and luxury coaches across Kerala, Karnataka & Tamil Nadu." },
+      { property: "og:description", content: "13+ years of crafted travel. Tours, packages and luxury coaches across Kerala, Karnataka & Tamil Nadu." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
