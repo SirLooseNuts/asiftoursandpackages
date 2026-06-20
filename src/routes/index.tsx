@@ -9,7 +9,7 @@ import destCoorg from "@/assets/dest-coorg.webp";
 import destKanyakumari from "@/assets/dest-kanyakumari.webp";
 import destGoa from "@/assets/dest-goa.webp";
 import aboutTravelers from "@/assets/about-travelers.webp";
-import heroHomeBg from "@/assets/hero-home-bg.webp";
+import heroHomeBg from "@/assets/hero-home-bg.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
